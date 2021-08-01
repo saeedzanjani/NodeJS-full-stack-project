@@ -1,0 +1,25 @@
+<%- include("./includes/header.ejs") %> 
+
+<%- include("./includes/registerMessage.ejs") %> 
+<form class="form-signin form-group" method="POST" action="/user/register">
+    <h1 class="h3 mb-3 fw-normal">Please sign up</h1>
+    <div class="form-floating mb-2">
+      <input type="text" class="form-control" id="floatingInput" name="fullname" placeholder="Fullname">
+      <label for="floatingInput">Fullname</label>
+    </div>
+    <div class="form-floating">
+      <input type="email" class="form-control" id="floatingInput" name="email" placeholder="name@example.com">
+      <label for="floatingInput">Email address</label>
+    </div>
+    <div class="form-floating mt-2">
+      <input type="password" class="form-control" id="floatingPassword" name="password" placeholder="Password">
+      <label for="floatingPassword">Password</label>
+    </div>
+    <div class="form-floating">
+      <input type="password" class="form-control" id="floatingPassword" name="confirmPassword" placeholder="confirm Password">
+      <label for="floatingPassword">Password</label>
+    </div>
+
+    <button class="w-100 btn btn-lg btn-primary" type="submit">Sign up</button>
+  </form>
+

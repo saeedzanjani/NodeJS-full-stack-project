@@ -1,0 +1,103 @@
+<%- include("../includes/dashHeader.ejs") %>
+
+<h3 class="mt-2 text-center">Create New Post</h3>
+<div class="w-50 mx-auto">
+    <%- include("../includes/validationErrors.ejs") %>
+</div>
+<div class="d-flex align-items-center justify-content-center">
+    <form
+        action="/dashboard/add-post"
+        class="w-50"
+        method="POST"
+        enctype="multipart/form-data"
+    >
+        <label for="selectedThumbnail">Thumbnail Image</label>
+        <div class="input-group mb-3">
+            <input
+                type="file"
+                class="custom-file-input"
+                name="thumbnail"
+                id="selectedThumbnail"
+                aria-describedby="inputGroupFileAddon03"
+            />
+            <label
+                id="thumbStatus"
+                class="custom-file-label"
+                for="inputGroupFile03"
+                >Choice your Image</label
+            >
+        </div>
+        <div class="form-group">
+            <label for="title">Post Title</label>
+            <input
+                type="text"
+                class="form-control w-50"
+                name="title"
+                id="title"
+            />
+        </div>
+
+        <div class="form-group my-2">
+            <label for="status">Status</label>
+            <select name="status" class="form-control w-25" id="status">
+                <option value="public" selected>Public</option>
+                <option value="private">Private</option>
+            </select>
+        </div>
+
+        <!-- <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <button
+                    class="btn btn-sm btn-outline-secondary"
+                    type="button"
+                    id="imageUpload"
+                >
+                    Upload Image
+                </button>
+            </div>
+            <div class="custom-file">
+                <input
+                    type="file"
+                    class="custom-file-input"
+                    id="selectedImage"
+                />
+                <label
+                    id="imageStatus"
+                    class="custom-file-label"
+                    for="selectedImage"
+                >
+                    Pick Your Image
+                </label>
+            </div>
+        </div> -->
+
+        <!-- <div id="progressDiv" style="display: none">
+            <div class="progress">
+                <div
+                    id="progressBar"
+                    class="progress-bar progress-bar-striped progress-bar-animated"
+                    role="progressbar"
+                    aria-valuemin="0"
+                    aria-valuemax="100"
+                ></div>
+            </div>
+        </div> -->
+
+        
+        <!-- <div class="w-100 bg-light text-center">
+            <p id="uploadResult" class="overflow-auto">Uploaded Image Address</p>
+        </div> -->
+
+        <div class="form-group">
+            <h5>Post Text</h5>
+            <textarea name="text" class="form-control" id="text"></textarea>
+        </div>
+
+        <div class="row">
+            <input type="submit" value="Create Post" class="btn btn-success m-2" />
+            <a href="/dashboard" class="btn btn-warning m-2">Cancel</a>
+        </div>
+    </form>
+</div>
+
+<%- include("../includes/dashFooter.ejs") %>

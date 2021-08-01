@@ -1,0 +1,25 @@
+<%- include("./includes/header.ejs") %> 
+    
+<%- include("./includes/loginMessage.ejs") %> 
+  <form class="form-signin form-group" method="POST" action="/user/login">
+    <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+
+    <div class="form-floating">
+      <input type="email" class="form-control" id="floatingInput" name="email" placeholder="name@example.com">
+      <label for="floatingInput">Email address</label>
+    </div>
+    <div class="form-floating mt-2">
+      <input type="password" class="form-control" id="floatingPassword" name="password" placeholder="Password">
+      <label for="floatingPassword">Password</label>
+    </div>
+
+    <div class="checkbox mb-3">
+      <label>
+        <input type="checkbox" name="remember" value="remember-me"> Remember me
+      </label>
+    </div>
+    <div class="g-recaptcha" data-sitekey="6LeannQbAAAAADAkN04LDWwBLBBIKefkFLYMhAQk"></div>
+    <a href="/user/forget-password">Forget Password</a>
+    <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
+  </form>
+

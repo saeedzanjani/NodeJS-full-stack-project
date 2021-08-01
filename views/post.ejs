@@ -1,0 +1,94 @@
+<%- include("./includes/header.ejs") %>
+<!-- Page Content -->
+<div class="container mt-5">
+    <div class="row">
+        <!-- Post Content Column -->
+        <div class="col">
+            <!-- Title -->
+            <h1 class="mt-4"><%= post.title %></h1>
+
+            <!-- Author -->
+            <p class="lead">
+                Writed by :
+                <a href="#"><%= post.user.fullname %></a>
+            </p>
+
+            <hr />
+
+            <!-- Date/Time -->
+            <p>Posted date : <%= (post.createdAt.toUTCString())%></p>
+
+            <hr />
+
+            Preview Image -->
+            <div class="text-center">
+                <img
+                    class="img-fluid rounded"
+                    src="http://localhost:3000/uploads/thumbnails/<%= post.thumbnail %>"
+                    alt=""
+                />
+            </div>
+
+            <hr />
+
+            <!-- Post Content -->
+            <p class="text-justify"><%- post.text %></p>
+
+            <hr />
+
+            <!-- Comments Form -->
+            <div class="card my-4">
+                <h5 class="card-header">Enter your comment:</h5>
+                <div class="card-body">
+                    <form>
+                        <div class="form-group">
+                            <textarea class="form-control" rows="3"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">
+                            Add comment
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Single Comment -->
+            <div class="media mb-4">
+                <img
+                    class="d-flex mr-3 rounded-circle"
+                    src="http://placehold.it/50x50"
+                    alt=""
+                />
+                <div class="media-body">
+                    <h5 class="mt-0">saeed safari</h5>
+                    this is acomment
+                </div>
+            </div>
+
+            <!-- Comment with nested comments -->
+            <div class="media mb-4">
+                <img
+                    class="d-flex mr-3 rounded-circle"
+                    src="http://placehold.it/50x50"
+                    alt=""
+                />
+                <div class="media-body">
+                    <h5 class="mt-0">saeed safari</h5>
+                    this is acomment
+
+                    <div class="media mt-4">
+                        <img
+                            class="d-flex mr-3 rounded-circle"
+                            src="http://placehold.it/50x50"
+                            alt=""
+                        />
+                        <div class="media-body">
+                            <h5 class="mt-0">saeed safari</h5>
+                            this is acomment
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<%- include('./includes/footer.ejs') %>

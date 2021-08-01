@@ -1,0 +1,26 @@
+<%- include("./includes/dashHeader.ejs") %>
+
+<nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
+    <a class="navbar-brand col-md-3 col-lg-2 mr-0 px-3" href="/">WebSite</a>
+    <!-- <h6 class="text-white text-nowrap mx-1">Welcome <%= fullname %> </h6> -->
+    <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-toggle="collapse"
+            data-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <form action="/dashboard/search" method="POST" class="w-100">
+        <input type="text" name="search" placeholder="Searching" class="form-control form-control-dark" aria-label="Search">
+    </form>
+    <ul class="navbar-nav px-3">
+        <li class="nav-item text-nowrap">
+            <a class="nav-link" href="/user/logout">Sign out</a>
+        </li>
+    </ul>
+</nav>
+
+
+
+<%- include("./private/dashSidebar.ejs") %>
+<%- include("./private/posts.ejs") %>
+
+
+<%- include("./includes/dashFooter.ejs") %>
